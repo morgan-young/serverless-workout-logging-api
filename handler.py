@@ -164,12 +164,11 @@ def delete_all_the_things(event, context):
     deletions = (f"Deleted {counter}")
 
     if int(counter) > 0:
-        counter_string = str(counter)
         response = {
                 "statusCode": 200,
                 'headers': {'Content-Type': 'application/json',
                             'Access-Control-Allow-Origin': '*'},
-                'body': 'we deleted ' + counter_string + ' workout entries'
+                'body': 'we deleted {} workout entries'.format(counter)
             }
     else:
         response = {
